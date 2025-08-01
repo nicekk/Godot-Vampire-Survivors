@@ -3,12 +3,10 @@ extends Node
 const MAX_RANGE = 150
 @export var sword_ability: PackedScene
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Timer.timeout.connect(on_timer_timeout)
 
 func on_timer_timeout():
-	
 	var player = get_tree().get_first_node_in_group("player") as Node2D
 	if player == null:
 		return
